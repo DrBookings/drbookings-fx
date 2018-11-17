@@ -1,2 +1,1 @@
-# drbookings-fx
-Dr.Bookings FX UI Application
+# Dr.Bookings FX UI Application
