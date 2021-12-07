@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Separator?>
+
+
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+	xmlns="http://javafx.com/javafx/8"
+	fx:controller="com.github.drbookings.ui.PaymentsBoxController">
+	<stylesheets>
+		<URL value="@/css/root.css" />
+		<URL value="@/css/commons.css" />
+	</stylesheets>
+	<center>
+		<GridPane hgap="4" vgap="4">
+		
+		<columnConstraints>
+					<ColumnConstraints hgrow="ALWAYS" minWidth="10.0"
+						percentWidth="33.33" prefWidth="100.0" />
+					<ColumnConstraints hgrow="ALWAYS" minWidth="10.0"
+						percentWidth="33.33" prefWidth="100.0" />
+						<ColumnConstraints hgrow="ALWAYS" minWidth="10.0"
+						percentWidth="33.33" prefWidth="100.0" />
+				</columnConstraints>
+
+			<Label text="Expected" prefWidth="100" GridPane.columnIndex="0" alignment="CENTER"
+				GridPane.rowIndex="0"></Label>
+
+			<TextField fx:id="expectedExpression" editable="true" prefWidth="100" GridPane.columnIndex="1" alignment="CENTER" 
+				GridPane.rowIndex="0" GridPane.ColumnSpan="1"></TextField>
+				
+				<Label fx:id="expected"  prefWidth="100" GridPane.columnIndex="2" alignment="CENTER" textAlignment="CENTER"
+				GridPane.rowIndex="0" GridPane.ColumnSpan="1"></Label>
+				
+				
+			<Label text="Completed" prefWidth="100" alignment="CENTER" textAlignment="CENTER"
+				GridPane.columnIndex="0" GridPane.rowIndex="1"></Label>
+
+			<TextField fx:id="completedOutput" prefWidth="100" alignment="CENTER"
+				styleClass="copyable-label" GridPane.columnIndex="1"
+				GridPane.rowIndex="1"></TextField>
+
+			<Button text="Add Payment" alignment="CENTER_RIGHT"
+				GridPane.columnIndex="2" GridPane.rowIndex="1"
+				GridPane.halignment="RIGHT" onAction="#addPayment"></Button>
+		</GridPane>
+	</center>
+</BorderPane>

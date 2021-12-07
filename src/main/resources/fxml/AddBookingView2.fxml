@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.VBox?>
+
+<!--
+  ~ DrBookings
+  ~
+  ~ Copyright (C) 2016 - 2018 Alexander Kerner
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as
+  ~ published by the Free Software Foundation, either version 2 of the
+  ~ License, or (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public
+  ~ License along with this program.  If not, see
+  ~ <http://www.gnu.org/licenses/gpl-2.0.html>.
+  -->
+
+<VBox spacing="4" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8"
+	fx:controller="com.github.drbookings.ui.controller.AddBookingController2">
+	<stylesheets>
+		<URL value="@/css/root.css" />
+	</stylesheets>
+	<padding>
+		<Insets bottom="8" left="8" right="8" top="8" />
+	</padding>
+	<children>
+		<HBox spacing="4">
+			<VBox spacing="4">
+				<Label text="Check-in" />
+				<DatePicker fx:id="datePickerCheckIn" onAction="#handleButtonSetCheckInDate" />
+				<Label text="Check-out" />
+				<DatePicker fx:id="datePickerCheckOut" onAction="#handleButtonSetCheckOutDate" />
+			</VBox>
+			<VBox HBox.hgrow="ALWAYS" alignment="CENTER">
+				<padding>
+					<Insets bottom="8" left="8" right="8" top="8" />
+				</padding>
+				<Label fx:id="infoLabel" VBox.vgrow="ALWAYS" wrapText="true"
+					alignment="CENTER" />
+			</VBox>
+		</HBox>
+		<Label text="Guest Name" />
+		<TextField fx:id="textFieldGuestName" />
+		<Label text="Source" />
+		<TextField fx:id="textFieldSource" />
+		<Label text="Apartment" />
+		<ComboBox fx:id="comboBoxRoom" maxWidth="Infinity" />
+		<Label text="Gross Earnings" />
+		<TextField fx:id="textFieldGrossEarnings" style="-fx-text-box-border: transparent;" />
+		<Label text="Service Fees" />
+		<TextField fx:id="textFieldServiceFees" />
+		<Label text="Service Fees Percent" />
+		<TextField fx:id="textFieldServiceFeesPercent" />
+		<HBox alignment="CENTER_RIGHT">
+			<children>
+				<Button fx:id="buttonOK" defaultButton="true" onAction="#handleButtonOK"
+					prefWidth="100" text="OK" />
+			</children>
+		</HBox>
+	</children>
+</VBox>

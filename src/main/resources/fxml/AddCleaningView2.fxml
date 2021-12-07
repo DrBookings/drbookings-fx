@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.CheckBox?>
+
+<!--
+  ~ DrBookings
+  ~
+  ~ Copyright (C) 2018 Alexander Kerner
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as
+  ~ published by the Free Software Foundation, either version 2 of the
+  ~ License, or (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public
+  ~ License along with this program.  If not, see
+  ~ <http://www.gnu.org/licenses/gpl-2.0.html>.
+  -->
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8"
+	fx:controller="com.github.drbookings.ui.controller.AddCleaningController2">
+	<stylesheets>
+		<URL value="@/css/root.css" />
+	</stylesheets>
+	<padding>
+		<Insets bottom="8" left="8" right="8" top="8" />
+	</padding>
+
+	<center>
+	<GridPane alignment="center" hgap="4" vgap="4" >
+	<columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="60.0"  />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="40.0"  />
+    </columnConstraints>
+			<children>
+				<HBox spacing="4" alignment="CENTER_LEFT" GridPane.rowIndex="0" GridPane.columnIndex="0">
+					<Label text="Date" />
+				</HBox>
+				<HBox spacing="4" alignment="CENTER_LEFT" GridPane.rowIndex="0" GridPane.columnIndex="1">
+					<DatePicker fx:id="date" />
+				</HBox>
+				<HBox spacing="4" alignment="CENTER_LEFT" GridPane.rowIndex="1" GridPane.columnIndex="0">
+					<Label text="Room" />
+				</HBox>
+				<HBox spacing="4" alignment="CENTER_LEFT" GridPane.rowIndex="1" GridPane.columnIndex="1">
+					<ComboBox fx:id="comboBoxRoom" prefWidth="200" />
+				</HBox>
+				<HBox spacing="4" alignment="CENTER_LEFT" GridPane.rowIndex="2"  GridPane.columnIndex="0">
+					<Label text="Name" />
+				</HBox>
+				<HBox spacing="4" alignment="CENTER_LEFT" GridPane.rowIndex="2" GridPane.columnIndex="1"  >
+					<TextField fx:id="name" prefWidth="200"  />
+				</HBox>
+				<HBox spacing="4" alignment="CENTER_LEFT" GridPane.rowIndex="3"  GridPane.columnIndex="0">
+					<Label text="Tax-Relevant" minWidth="60" />
+				</HBox>
+				<HBox spacing="4" alignment="CENTER_LEFT" GridPane.rowIndex="3" GridPane.columnIndex="1"  >
+					<CheckBox fx:id="tax"></CheckBox>
+				</HBox>
+			</children>
+		</GridPane>
+	</center>
+	<bottom>
+		<HBox alignment="BOTTOM_RIGHT">
+			<children>
+				<Button fx:id="buttonOK" defaultButton="true" onAction="#handleButtonOK"
+					prefWidth="100" text="OK" />
+			</children>
+		</HBox>
+	</bottom>
+</BorderPane>

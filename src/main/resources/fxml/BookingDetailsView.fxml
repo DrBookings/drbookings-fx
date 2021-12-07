@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Separator?>
+
+<!-- ~ DrBookings ~ ~ Copyright (C) 2018 Alexander Kerner ~ ~ This program 
+	is free software: you can redistribute it and/or modify ~ it under the terms 
+	of the GNU General Public License as ~ published by the Free Software Foundation, 
+	either version 2 of the ~ License, or (at your option) any later version. 
+	~ ~ This program is distributed in the hope that it will be useful, ~ but 
+	WITHOUT ANY WARRANTY; without even the implied warranty of ~ MERCHANTABILITY 
+	or FITNESS FOR A PARTICULAR PURPOSE. See the ~ GNU General Public License 
+	for more details. ~ ~ You should have received a copy of the GNU General 
+	Public ~ License along with this program. If not, see ~ <http://www.gnu.org/licenses/gpl-2.0.html>. -->
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+	xmlns="http://javafx.com/javafx/8"
+	fx:controller="com.github.drbookings.ui.BookingDetailsController"
+	fx:id="root">
+	<stylesheets>
+		<URL value="@/css/root.css" />
+		<URL value="@/css/bookingDetails.css" />
+	</stylesheets>
+	<top>
+		<VBox >
+			<GridPane>
+				<columnConstraints>
+					<ColumnConstraints hgrow="ALWAYS" minWidth="10.0"
+						percentWidth="33.33" prefWidth="100.0" />
+					<ColumnConstraints hgrow="ALWAYS" minWidth="10.0"
+						percentWidth="33.33" prefWidth="100.0" />
+					<ColumnConstraints hgrow="ALWAYS" minWidth="10.0"
+						percentWidth="33.33" prefWidth="100.0" />
+				</columnConstraints>
+				<children >
+					<HBox fx:id="name" alignment="CENTER" GridPane.rowIndex="0"
+						GridPane.columnIndex="0" >
+						<padding>
+							<Insets bottom="6" left="6" right="6" top="6" />
+						</padding>
+					</HBox>
+					<HBox fx:id="dates" alignment="CENTER" GridPane.rowIndex="0"
+						GridPane.columnIndex="1">
+						<padding>
+							<Insets bottom="6" left="0" right="0" top="6" />
+						</padding>
+					</HBox>
+					<HBox fx:id="nights" alignment="CENTER" GridPane.rowIndex="0"
+						GridPane.columnIndex="2">
+						<padding>
+							<Insets bottom="6" left="0" right="0" top="6" />
+						</padding>
+					</HBox>
+				</children>
+			</GridPane>
+		</VBox>
+	</top>
+	<center>
+		<VBox>
+		<VBox styleClass="border-box">
+			<GridPane>
+				<columnConstraints>
+					<ColumnConstraints hgrow="SOMETIMES"
+						minWidth="10.0" prefWidth="100.0" percentWidth="30.0" />
+					<ColumnConstraints hgrow="ALWAYS" minWidth="10.0"
+						prefWidth="100.0" percentWidth="40.0" />
+					<ColumnConstraints hgrow="SOMETIMES"
+						minWidth="10.0" prefWidth="100.0" percentWidth="30.0" />
+				</columnConstraints>
+				<children>
+					<Label text="Gross Payments" alignment="CENTER"
+						minWidth="10.0" prefWidth="100.0" maxWidth="Infinity"
+						GridPane.rowIndex="0" GridPane.columnIndex="0" />
+					<VBox GridPane.rowIndex="0" GridPane.columnIndex="1">
+						<padding>
+							<Insets bottom="6" left="0" right="0" top="6" />
+						</padding>
+						<children>
+							<TextField fx:id="grossPaymentsExpression"
+								alignment="CENTER" editable="false" minWidth="10.0"
+								prefWidth="100.0" maxWidth="Infinity" style="-fx-text-box-border: transparent;" />
+						</children>
+					</VBox>
+					<Label fx:id="grossPayments" text="" alignment="CENTER"
+						minWidth="10.0" prefWidth="100.0" maxWidth="Infinity"
+						GridPane.rowIndex="0" GridPane.columnIndex="2" />
+					<Label text="Amount Received" alignment="CENTER"
+						minWidth="10.0" prefWidth="100.0" maxWidth="Infinity"
+						GridPane.rowIndex="1" GridPane.columnIndex="0" />
+					<VBox GridPane.rowIndex="1" GridPane.columnIndex="1">
+						<padding>
+							<Insets bottom="6" left="0" right="0" top="6" />
+						</padding>
+						<children>
+							<Label fx:id="amountReceived" alignment="CENTER"
+								minWidth="10.0" prefWidth="100.0" maxWidth="Infinity" />
+						</children>
+					</VBox>
+					<HBox alignment="CENTER" GridPane.rowIndex="1"
+						GridPane.columnIndex="2">
+						<Button text="Add Payment" onAction="#addPayment" />
+					</HBox>
+				</children>
+			</GridPane>
+		</VBox>
+		<VBox styleClass="border-box" ></VBox>
+		</VBox>
+	</center>
+	<bottom>
+		<HBox alignment="CENTER">
+			<padding>
+				<Insets bottom="6" left="6" right="6" top="6" />
+			</padding>
+			<children>
+				<CheckBox fx:id="welcomeMailSent" text="Welcome Mail sent">
+				</CheckBox>
+			</children>
+
+		</HBox>
+	</bottom>
+</BorderPane>
